@@ -1,2 +1,0 @@
-# dinesh
-languageAi
