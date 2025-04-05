@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language AI | Personal Language Tutor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Landing Page -->
+        <div class="landing-page" id="landingPage">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Language AI</span>
+                </div>
+                <button class="btn-login" id="loginBtn">Get Started</button>
+            </nav>
+            
+            <main class="hero-section">
+                <div class="hero-content">
+                    <h1>Your Personal <span class="highlight">AI Language Tutor</span></h1>
+                    <p class="subtitle">Learn any language naturally with our error-free AI tutor that adapts to your level and learning style.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-microphone-alt"></i>
+                            <h3>Perfect Pronunciation</h3>
+                            <p>Get instant feedback on your speaking with our advanced voice recognition.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>Adaptive Learning</h3>
+                            <p>Our AI adjusts lessons based on your progress and weak areas.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-globe"></i>
+                            <h3>50+ Languages</h3>
+                            <p>From Spanish to Swahili, we've got you covered with native-level instruction.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Real Progress</h3>
+                            <p>Track your improvement with detailed analytics and milestones.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-primary" id="startLearningBtn">Start Learning Now</button>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="language-bubbles">
+                        <span class="bubble bubble-1">中文</span>
+                        <span class="bubble bubble-2">Français</span>
+                        <span class="bubble bubble-3">Español</span>
+                        <span class="bubble bubble-4">Deutsch</span>
+                        <span class="bubble bubble-5">日本語</span>
+                        <span class="bubble bubble-6">العربية</span>
+                    </div>
+                    <div class="ai-avatar">
+                        <div class="avatar-face">
+                            <div class="eyes">
+                                <div class="eye left-eye"></div>
+                                <div class="eye right-eye"></div>
+                            </div>
+                            <div class="mouth"></div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <!-- Tutor Interface (Hidden Initially) -->
+        <div class="tutor-interface" id="tutorInterface">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="user-profile">
+                        <div class="avatar">U</div>
+                        <div class="user-info">
+                            <h4>User</h4>
+                            <p>Beginner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active"><a href="#"><i class="fas fa-comment-dots"></i> Conversation</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Lessons</a></li>
+                        <li><a href="#"><i class="fas fa-chart-pie"></i> Progress</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="language-selector">
+                    <label for="language">Learning:</label>
+                    <select id="language">
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="mandarin">Mandarin</option>
+                    </select>
+                </div>
+                
+                <div class="current-lesson">
+                    <h5>Current Lesson</h5>
+                    <div class="lesson-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 35%;"></div>
+                        </div>
+                        <span>35%</span>
+                    </div>
+                    <p>Greetings & Introductions</p>
+                </div>
+            </aside>
+            
+            <main class="tutor-main">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="tutor-info">
+                            <div class="tutor-avatar">AI</div>
+                            <h3>LinguaBot AI Tutor</h3>
+                            <div class="status-indicator"></div>
+                        </div>
+                        <button class="btn-icon" id="backToHomeBtn">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message tutor-message">
+                            <div class="message-content">
+                                <p>¡Hola! Soy tu tutor de español. ¿Cómo te llamas?</p>
+                                <small>10:24 AM</small>
+                            </div>
+                        </div>
+                        <div class="message user-message">
+                            <div class="message-content">
+                                <p>Me llamo Alex.</p>
+                                <small>10:25 AM</small>
+                            </div>
+                        </div>
+                        <div class="message tutor-message">
+                            <div class="message-content">
+                                <p>¡Mucho gusto, Alex! Today we'll practice basic greetings. Repeat after me: "Buenos días"</p>
+                                <small>10:25 AM</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <div class="input-tools">
+                            <button class="btn-icon"><i class="fas fa-microphone"></i></button>
+                            <button class="btn-icon"><i class="fas fa-image"></i></button>
+                            <button class="btn-icon"><i class="fas fa-paperclip"></i></button>
+                        </div>
+                        <input type="text" id="messageInput" placeholder="Type your response or say it aloud...">
+                        <button class="btn-send" id="sendMessageBtn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                
+                <div class="learning-tools">
+                    <div class="tool-card">
+                        <h4>Vocabulary Helper</h4>
+                        <div class="vocabulary-list">
+                            <div class="vocab-item">
+                                <span>Hola</span>
+                                <span>Hello</span>
+                            </div>
+                            <div class="vocab-item">
+                                <span>Buenos días</span>
+                                <span>Good morning</span>
+                            </div>
+                            <div class="vocab-item">
+                                <span>¿Cómo estás?</span>
+                                <span>How are you?</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tool-card">
+                        <h4>Grammar Tip</h4>
+                        <p>In Spanish, adjectives usually come after the noun they describe, unlike in English. For example: "casa grande" (big house).</p>
+                    </div>
+                    
+                    <div class="tool-card pronunciation-feedback">
+                        <h4>Pronunciation Feedback</h4>
+                        <div class="pronunciation-meter">
+                            <div class="meter-bar" style="width: 75%;"></div>
+                        </div>
+                        <p>Your last attempt was 75% accurate. Focus on rolling your "r" in "perro".</p>
+                        <button class="btn-small">Practice Again</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
